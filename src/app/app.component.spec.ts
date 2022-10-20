@@ -1,35 +1,47 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-
+import { Addition } from './calculator';  
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+beforeAll(function(){
+  console.log("Before All");
+})
+afterAll(function(){
+  console.log("After All")
+})
+var comp : AppComponent;    //declare var comp of type AppComonent
 
-  it(`should have as title 'AngularTestingProject2'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('AngularTestingProject2');
-  });
+beforeEach(function(){    // beforeEah used to initialize the component
+ comp = new AppComponent();   //create instance comp here. beforeach will initiate this before every testcase run
+  console.log("Before Each")
+})
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('AngularTestingProject2 app is running!');
+afterEach(function(){ //afterEach used to nullify the obect
+ // comp = null; // whatever the object we are having,assign it to null, used to nullify the object
+  console.log("After Each")
+})
+
+  it("Increase count",()=>{
+
+    comp.increaseCount(2);
+
+    expect(comp.Count).toEqual(12)
+
+    console.log("Increase");
+
+  })
+
+  it("Decrease count",()=>{
+
+    comp.decreaseCount(2);
+
+    expect(comp.Count).toEqual(8);
+
+    console.log("Decrease");
+  })
+
+  it("test3",()=>{
+    console.log("test 3");
+  })
   });
-});
