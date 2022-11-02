@@ -14,6 +14,9 @@ import { StudentComponent } from './student/student.component';
     BrowserModule,
     AppRoutingModule
   ],
+  exports:[
+    StudentComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
