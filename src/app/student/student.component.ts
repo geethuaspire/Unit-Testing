@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { StudentService } from './student.service';
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+  num = 20;
+  redColor = 'font-red';
+  blueColor = 'font-blue';
+  constructor(public serice:StudentService) { }
 
   ngOnInit(): void {
   }
