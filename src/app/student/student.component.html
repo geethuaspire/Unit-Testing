@@ -1,2 +1,5 @@
-<button id="button1" (click)=""></button>
-<button></button>
+<button id="button1" (click)="buttonClick()" style="color:blue"> Button1 Click Event</button>
+<button id="button2" (click)="buttonClick2()">button2 click Event</button>
+<input id="textbox1" placeholder="button1 on value change" (input)="onChangeInput()">
+<input id="textbox2" placeholder="capture the event of the input" (input)="onChangeLabelInput($event)">
+<h3>{{label}}</h3>
