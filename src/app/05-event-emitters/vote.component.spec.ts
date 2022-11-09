@@ -9,7 +9,8 @@ describe('VoteComponent',()=>{
 
     it('should raise voteChanged event when upvoted',()=>{
         // let totalVotes =null;
-        let totalVotes =0;
+        let totalVotes = 0;
+
           component.voteChanged.subscribe(tv=> totalVotes = tv)
 
           component.upVote();
